@@ -31,6 +31,7 @@ namespace S10V133_Etiqueta
                 {
                     Console.Write("Customs fee: ");
                     double tax = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+                    price += tax;
                     list.Add(new ImportedProduct(name, price, tax));
                 }
                 else if (situation == "u")

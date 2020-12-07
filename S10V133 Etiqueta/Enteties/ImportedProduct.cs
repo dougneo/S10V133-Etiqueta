@@ -18,12 +18,12 @@ namespace S10V133_Etiqueta.Enteties
 
         public override string PriceTag()
         {
-            return base.PriceTag()+ "Customs Fee: $ "+  CustomsFee;
+            return base.PriceTag()+ " (Customs Fee: $ "+  CustomsFee+")";
         }
 
         public double TotalPrice()
         {
-            return Price + CustomsFee;
+            return Price += CustomsFee;
         }
     }
 }
