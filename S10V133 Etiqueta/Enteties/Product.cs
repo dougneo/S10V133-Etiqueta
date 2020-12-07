@@ -18,9 +18,9 @@ namespace S10V133_Etiqueta.Enteties
             Price = price;
         }
 
-        public string PriceTag(string cui)
+        public virtual string PriceTag()
         {
-            
+            return Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
