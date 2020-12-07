@@ -20,7 +20,9 @@ namespace S10V133_Etiqueta.Enteties
 
         public virtual string PriceTag()
         {
-            return Name + " $ " + Price.ToString("F2", CultureInfo.InvariantCulture);
+            return Name 
+                + " $ " 
+                + Price.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

@@ -18,7 +18,12 @@ namespace S10V133_Etiqueta.Enteties
 
         public override string PriceTag()
         {
-            return base.PriceTag()+ " (Customs Fee: $ "+  CustomsFee+")";
+            return Name
+                + " $ "
+                + TotalPrice().ToString("F2", CultureInfo.InvariantCulture)
+                + " (Customs fee: $ "
+                + CustomsFee.ToString("F2", CultureInfo.InvariantCulture)
+                + ")";
         }
 
         public double TotalPrice()
