@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using S10V133_Etiqueta.Enteties;
-
+using System.Globalization;
 
 namespace S10V133_Etiqueta
 {
@@ -25,12 +25,12 @@ namespace S10V133_Etiqueta
                 string name = Console.ReadLine();
 
                 Console.Write("Price: ");
-                double price = double.Parse(Console.ReadLine());
+                double price = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
 
                 if (situation == "i")
                 {
                     Console.Write("Customs fee: ");
-                    double tax = double.Parse(Console.ReadLine());
+                    double tax = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
                     list.Add(new ImportedProduct(name, price, tax));
                 }
                 else if (situation == "u")
@@ -47,7 +47,7 @@ namespace S10V133_Etiqueta
 
             foreach (Product prod in list)
             {
-                Console.WriteLine(prod);
+                Console.WriteLine(prod.PriceTag());
             }
         }
     }
